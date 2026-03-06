@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Puneetha G — AI Engineer & Founder, ZEO AI</title>
+<meta name="description" content="Puneetha G — AI Engineer, AIML Student at Srinivas University, Founder of ZEO AI."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#fafaf8;
+  --white:#ffffff;
+  --navy:#0a1628;
+  --navy2:#162340;
+  --steel:#2c3e5a;
+  --border:#e2e4e8;
+  --border2:#cdd0d8;
+  --text:#111827;
+  --body:#374151;
+  --muted:#6b7280;
+  --light:#9ca3af;
+  --accent:#1a4fa0;
+  --accent-lt:#eef2fb;
+  --gold:#b8860b;
+  --radius:8px;
+  --shadow:0 1px 3px rgba(0,0,0,0.08),0 4px 16px rgba(0,0,0,0.06);
+  --shadow-lg:0 4px 24px rgba(0,0,0,0.10),0 12px 48px rgba(0,0,0,0.08);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Manrope',sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;line-height:1.6}
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--border2);border-radius:5px}
+
+/* ── TOPBAR ── */
+.topbar{
+  background:var(--navy);color:#c8d4e8;
+  font-size:0.72rem;letter-spacing:0.5px;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:8px 5%;font-family:'Manrope',sans-serif;
+}
+.topbar a{color:#8ba4cc;text-decoration:none;margin-left:20px;transition:color 0.2s}
+.topbar a:hover{color:#fff}
+.topbar-left{display:flex;align-items:center;gap:6px}
+.topbar-dot{width:6px;height:6px;border-radius:50%;background:#22c55e}
+
+/* ── NAV ── */
+nav{
+  position:sticky;top:0;z-index:200;
+  background:var(--white);
+  border-bottom:1px solid var(--border);
+  box-shadow:0 1px 0 var(--border);
+}
+.nav-inner{
+  max-width:1200px;margin:0 auto;padding:0 5%;
+  height:64px;display:flex;align-items:center;justify-content:space-between;
+}
+.nav-brand{display:flex;align-items:center;gap:14px}
+.nav-initials{
+  width:38px;height:38px;border-radius:6px;
+  background:var(--navy);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'EB Garamond',serif;font-size:1.1rem;font-weight:500;
+  letter-spacing:0.5px;
+}
+.nav-name{font-size:0.95rem;font-weight:600;color:var(--text);letter-spacing:-0.2px}
+.nav-title{font-size:0.72rem;color:var(--muted);font-weight:400}
+.nav-links{display:flex;gap:0;list-style:none}
+.nav-links a{
+  font-size:0.82rem;font-weight:500;color:var(--body);
+  text-decoration:none;padding:8px 16px;border-radius:6px;
+  transition:all 0.15s;letter-spacing:0.1px;
+}
+.nav-links a:hover{background:var(--accent-lt);color:var(--accent)}
+.nav-links a.active{color:var(--accent)}
+.nav-actions{display:flex;align-items:center;gap:10px}
+.btn-nav{
+  font-size:0.8rem;font-weight:600;padding:8px 18px;
+  border-radius:6px;cursor:pointer;transition:all 0.2s;
+  font-family:'Manrope',sans-serif;letter-spacing:0.2px;text-decoration:none;
+  display:inline-flex;align-items:center;gap:6px;
+}
+.btn-outline{background:transparent;border:1.5px solid var(--border2);color:var(--body)}
+.btn-outline:hover{border-color:var(--accent);color:var(--accent)}
+.btn-solid{background:var(--navy);border:1.5px solid var(--navy);color:#fff}
+.btn-solid:hover{background:var(--accent);border-color:var(--accent)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.hamburger span{width:22px;height:1.5px;background:var(--text);display:block;transition:0.3s}
+
+/* ── HERO ── */
+.hero-outer{background:var(--navy);overflow:hidden;position:relative}
+.hero-outer::after{
+  content:'';position:absolute;right:-80px;top:-80px;
+  width:500px;height:500px;border-radius:50%;
+  background:radial-gradient(circle,rgba(26,79,160,0.4),transparent 70%);
+  pointer-events:none;
+}
+.hero-inner{
+  max-width:1200px;margin:0 auto;padding:80px 5% 80px;
+  display:grid;grid-template-columns:1fr auto;gap:60px;align-items:center;
+}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);
+  border-radius:4px;padding:5px 12px;
+  font-size:0.72rem;font-weight:600;color:#8ba4cc;
+  letter-spacing:1.5px;text-transform:uppercase;margin-bottom:24px;
+}
+.hero-name{
+  font-family:'EB Garamond',serif;
+  font-size:clamp(3rem,6vw,5.5rem);font-weight:500;
+  color:#f0f4fc;line-height:1;letter-spacing:-2px;margin-bottom:6px;
+}
+.hero-name em{font-style:italic;color:#7ca4e0}
+.hero-role{
+  font-size:1rem;font-weight:500;color:#8ba4cc;
+  letter-spacing:0.3px;margin-bottom:20px;
+}
+.hero-desc{
+  font-size:0.95rem;font-weight:300;color:#9db3cc;
+  line-height:1.8;max-width:520px;margin-bottom:36px;
+}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn-hero-primary{
+  background:#fff;color:var(--navy);border:none;
+  font-size:0.82rem;font-weight:700;padding:12px 24px;
+  border-radius:6px;cursor:pointer;text-decoration:none;
+  font-family:'Manrope',sans-serif;letter-spacing:0.3px;
+  transition:all 0.2s;
+}
+.btn-hero-primary:hover{background:#e8f0fe;transform:translateY(-1px)}
+.btn-hero-ghost{
+  background:transparent;color:#c8d4e8;
+  border:1.5px solid rgba(255,255,255,0.2);
+  font-size:0.82rem;font-weight:500;padding:12px 24px;
+  border-radius:6px;cursor:pointer;text-decoration:none;
+  font-family:'Manrope',sans-serif;letter-spacing:0.3px;
+  transition:all 0.2s;
+}
+.btn-hero-ghost:hover{border-color:rgba(255,255,255,0.5);color:#fff}
+.hero-card{
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:12px;padding:32px 28px;min-width:220px;
+  display:flex;flex-direction:column;gap:20px;
+}
+.hero-card-stat .num{
+  font-family:'EB Garamond',serif;font-size:2.8rem;font-weight:500;
+  color:#f0f4fc;line-height:1;letter-spacing:-1px;
+}
+.hero-card-stat .lbl{font-size:0.75rem;color:#8ba4cc;margin-top:4px;letter-spacing:0.3px}
+.hero-card-divider{height:1px;background:rgba(255,255,255,0.08)}
+
+/* ── SECTION WRAPPER ── */
+.section{max-width:1200px;margin:0 auto;padding:72px 5%}
+.section+.section{border-top:1px solid var(--border)}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:40px;flex-wrap:wrap;gap:16px}
+.sec-label{
+  font-size:0.7rem;font-weight:700;letter-spacing:2px;
+  text-transform:uppercase;color:var(--accent);margin-bottom:8px;
+}
+.sec-title{
+  font-family:'EB Garamond',serif;
+  font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:500;
+  color:var(--text);letter-spacing:-1px;line-height:1.15;
+}
+.sec-title em{font-style:italic;color:var(--muted)}
+.sec-link{font-size:0.8rem;color:var(--accent);text-decoration:none;font-weight:600;letter-spacing:0.2px;white-space:nowrap}
+.sec-link:hover{text-decoration:underline}
+
+/* ── ABOUT ── */
+.about-grid{display:grid;grid-template-columns:1fr 340px;gap:60px;align-items:start}
+.about-body p{font-size:0.95rem;color:var(--body);line-height:1.85;margin-bottom:18px;font-weight:300}
+.about-body p strong{color:var(--text);font-weight:600}
+.about-body p:last-child{margin-bottom:0}
+.about-sidebar{}
+.profile-card{
+  background:var(--white);border:1px solid var(--border);
+  border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);
+}
+.profile-card-header{background:var(--navy);padding:28px 24px;text-align:center}
+.profile-avatar{
+  width:72px;height:72px;border-radius:50%;
+  background:linear-gradient(135deg,#2c5282,#1a4fa0);
+  margin:0 auto 14px;display:flex;align-items:center;justify-content:center;
+  font-family:'EB Garamond',serif;font-size:2rem;color:#fff;font-weight:500;
+  border:3px solid rgba(255,255,255,0.15);
+}
+.profile-name{font-size:1rem;font-weight:600;color:#f0f4fc;margin-bottom:4px}
+.profile-role{font-size:0.75rem;color:#8ba4cc}
+.profile-body{padding:20px 24px}
+.profile-row{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:12px 0;border-bottom:1px solid var(--border);font-size:0.82rem;
+}
+.profile-row:last-child{border-bottom:none}
+.profile-row .pk{color:var(--muted);font-weight:500}
+.profile-row .pv{color:var(--text);font-weight:600;text-align:right}
+.profile-row .pv.green{color:#16a34a}
+
+/* ── STATS ROW ── */
+.stats-row{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:1px;background:var(--border);
+  border:1px solid var(--border);border-radius:var(--radius);
+  overflow:hidden;margin-top:48px;
+}
+.stat-box{
+  background:var(--white);padding:28px 24px;text-align:center;
+}
+.stat-box .n{
+  font-family:'EB Garamond',serif;font-size:2.6rem;font-weight:500;
+  color:var(--navy);letter-spacing:-1.5px;line-height:1;
+}
+.stat-box .l{font-size:0.75rem;color:var(--muted);margin-top:6px;font-weight:500;letter-spacing:0.2px}
+
+/* ── SKILLS ── */
+.skills-wrap{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1px;background:var(--border);
+  border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;
+}
+.skill-panel{background:var(--white);padding:32px 28px}
+.skill-panel-title{
+  font-size:0.7rem;font-weight:700;letter-spacing:2px;
+  text-transform:uppercase;color:var(--accent);
+  margin-bottom:24px;padding-bottom:14px;border-bottom:1px solid var(--border);
+}
+.skill-row{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:10px 0;border-bottom:1px solid var(--border);
+}
+.skill-row:last-child{border-bottom:none}
+.skill-row .sn{font-size:0.88rem;font-weight:500;color:var(--text)}
+.skill-badge{
+  font-size:0.68rem;font-weight:600;padding:3px 9px;border-radius:4px;
+  letter-spacing:0.3px;
+}
+.badge-adv{background:#dbeafe;color:#1e40af}
+.badge-int{background:#fef3c7;color:#92400e}
+
+/* ── PROJECTS ── */
+.projects-list{display:flex;flex-direction:column;gap:0}
+.proj-row{
+  display:grid;grid-template-columns:56px 1fr 200px 100px;
+  gap:24px;align-items:start;
+  padding:24px 0;border-bottom:1px solid var(--border);
+  transition:background 0.15s;
+}
+.proj-row:first-child{border-top:1px solid var(--border)}
+.proj-row:hover{background:var(--accent-lt);margin:0 -24px;padding-left:24px;padding-right:24px;border-radius:0}
+.proj-idx{font-size:0.75rem;color:var(--light);font-weight:600;padding-top:2px}
+.proj-info{}
+.proj-title{font-size:0.95rem;font-weight:700;color:var(--text);margin-bottom:5px;letter-spacing:-0.2px}
+.proj-desc{font-size:0.82rem;color:var(--muted);line-height:1.6}
+.proj-tags-wrap{display:flex;flex-wrap:wrap;gap:6px;padding-top:2px}
+.ptag{
+  font-size:0.68rem;font-weight:600;color:var(--steel);
+  background:#f1f3f7;border-radius:4px;padding:3px 8px;
+  letter-spacing:0.2px;
+}
+.proj-action{text-align:right;padding-top:2px}
+.proj-link-btn{
+  font-size:0.75rem;font-weight:600;color:var(--accent);
+  text-decoration:none;display:inline-flex;align-items:center;gap:4px;
+  padding:6px 12px;border:1.5px solid #c7d7f0;border-radius:5px;
+  transition:all 0.2s;white-space:nowrap;
+}
+.proj-link-btn:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+
+/* ── ZEO AI ── */
+.zeo-outer{background:var(--navy);border-top:1px solid #1e3050;border-bottom:1px solid #1e3050}
+.zeo-inner{max-width:1200px;margin:0 auto;padding:72px 5%}
+.zeo-top{display:flex;align-items:flex-start;justify-content:space-between;gap:40px;margin-bottom:56px;flex-wrap:wrap}
+.zeo-brand{display:flex;align-items:center;gap:18px}
+.zeo-logo{
+  width:64px;height:64px;border-radius:12px;
+  background:linear-gradient(135deg,#2563eb,#1a4fa0);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'EB Garamond',serif;font-size:2.2rem;color:#fff;font-weight:500;
+  border:1px solid rgba(255,255,255,0.15);
+}
+.zeo-brand-text{}
+.zeo-brand-name{font-family:'EB Garamond',serif;font-size:1.8rem;color:#f0f4fc;font-weight:500;letter-spacing:-0.5px}
+.zeo-brand-tag{font-size:0.75rem;color:#8ba4cc;margin-top:3px}
+.zeo-desc{font-size:0.9rem;color:#9db3cc;line-height:1.8;max-width:460px;font-weight:300}
+.zeo-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,0.06);border-radius:var(--radius);overflow:hidden;border:1px solid rgba(255,255,255,0.08)}
+.zeo-card{background:rgba(255,255,255,0.03);padding:28px 24px;transition:background 0.2s}
+.zeo-card:hover{background:rgba(255,255,255,0.06)}
+.zeo-card-icon{font-size:1.5rem;margin-bottom:14px;display:block}
+.zeo-card-title{font-size:0.9rem;font-weight:600;color:#d4e3f7;margin-bottom:8px}
+.zeo-card-desc{font-size:0.78rem;color:#7a9ab8;line-height:1.65}
+
+/* ── ACHIEVEMENTS ── */
+.ach-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+.ach-item{
+  background:var(--white);padding:28px 32px;
+  display:flex;align-items:flex-start;gap:18px;
+}
+.ach-icon{
+  width:40px;height:40px;border-radius:8px;background:var(--accent-lt);
+  display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;
+}
+.ach-title{font-size:0.9rem;font-weight:700;color:var(--text);margin-bottom:4px}
+.ach-desc{font-size:0.8rem;color:var(--muted);line-height:1.6}
+
+/* ── EDUCATION ── */
+.edu-wrap{
+  background:var(--white);border:1px solid var(--border);
+  border-radius:var(--radius);box-shadow:var(--shadow);
+  display:flex;align-items:stretch;overflow:hidden;max-width:700px;
+}
+.edu-accent-bar{width:6px;background:var(--navy);flex-shrink:0}
+.edu-content{padding:32px 36px;flex:1}
+.edu-degree{font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:6px}
+.edu-school{font-size:0.88rem;font-weight:600;color:var(--accent);margin-bottom:4px}
+.edu-meta{font-size:0.8rem;color:var(--muted)}
+.edu-badge{
+  margin-top:14px;display:inline-flex;align-items:center;gap:6px;
+  background:var(--accent-lt);border:1px solid #c7d7f0;border-radius:4px;
+  padding:4px 12px;font-size:0.72rem;font-weight:600;color:var(--accent);
+}
+
+/* ── CONTACT ── */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.contact-block{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+.contact-block-header{background:var(--navy);padding:22px 28px}
+.contact-block-header h3{font-family:'EB Garamond',serif;font-size:1.3rem;color:#f0f4fc;font-weight:500}
+.contact-block-header p{font-size:0.78rem;color:#8ba4cc;margin-top:4px}
+.contact-block-body{padding:24px 28px}
+.contact-field{padding:14px 0;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;font-size:0.85rem}
+.contact-field:last-child{border-bottom:none}
+.cf-key{color:var(--muted);font-weight:500}
+.cf-val{color:var(--text);font-weight:600;text-align:right}
+.cf-val a{color:var(--accent);text-decoration:none}
+.cf-val a:hover{text-decoration:underline}
+.social-list{display:flex;flex-direction:column;gap:12px;padding-top:8px}
+.soc-btn{
+  display:flex;align-items:center;gap:14px;
+  padding:14px 18px;border:1.5px solid var(--border);border-radius:var(--radius);
+  text-decoration:none;color:var(--text);transition:all 0.2s;background:var(--bg);
+}
+.soc-btn:hover{border-color:var(--accent);background:var(--accent-lt)}
+.soc-icon{
+  width:36px;height:36px;border-radius:7px;
+  background:var(--navy);display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.soc-icon svg{width:18px;height:18px;fill:#fff}
+.soc-info{}
+.soc-name{font-size:0.88rem;font-weight:700;color:var(--text)}
+.soc-handle{font-size:0.75rem;color:var(--muted)}
+.soc-arrow{margin-left:auto;color:var(--light);font-size:1rem}
+
+/* ── FOOTER ── */
+footer{background:var(--navy);border-top:1px solid #1e3050}
+.footer-inner{
+  max-width:1200px;margin:0 auto;padding:40px 5%;
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;
+}
+.footer-brand{display:flex;align-items:center;gap:12px}
+.footer-initials{
+  width:34px;height:34px;border-radius:6px;
+  background:rgba(255,255,255,0.1);color:#c8d4e8;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'EB Garamond',serif;font-size:1rem;font-weight:500;
+}
+.footer-name{font-size:0.88rem;color:#c8d4e8;font-weight:600}
+.footer-copy{font-size:0.75rem;color:#8ba4cc;text-align:right;line-height:1.7}
+
+/* ── REVEAL ── */
+.rv{opacity:0;transform:translateY(18px);transition:opacity 0.55s ease,transform 0.55s ease}
+.rv.in{opacity:1;transform:none}
+.rv-d1{transition-delay:0.1s}
+.rv-d2{transition-delay:0.2s}
+.rv-d3{transition-delay:0.3s}
+
+/* ── MOBILE ── */
+.mob-menu{
+  display:none;position:fixed;inset:0;z-index:300;
+  background:#fff;flex-direction:column;align-items:center;justify-content:center;gap:24px;
+}
+.mob-menu.open{display:flex}
+.mob-menu a{font-family:'EB Garamond',serif;font-size:1.8rem;color:var(--text);text-decoration:none}
+.mob-close{position:absolute;top:20px;right:5%;background:none;border:none;font-size:1.1rem;color:var(--muted);cursor:pointer}
+@media(max-width:960px){
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .hero-inner{grid-template-columns:1fr}
+  .hero-card{display:none}
+  .about-grid{grid-template-columns:1fr}
+  .skills-wrap{grid-template-columns:1fr}
+  .zeo-cards{grid-template-columns:repeat(2,1fr)}
+  .ach-grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+  .stats-row{grid-template-columns:repeat(2,1fr)}
+  .proj-row{grid-template-columns:44px 1fr}
+  .proj-row .proj-tags-wrap,.proj-row .proj-action{display:none}
+}
+@media(max-width:540px){
+  .zeo-cards{grid-template-columns:1fr}
+  .stats-row{grid-template-columns:1fr 1fr}
+  .footer-inner{flex-direction:column;align-items:flex-start}
+  .footer-copy{text-align:left}
+}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="topbar-left">
+    <span class="topbar-dot"></span>
+    Available for opportunities · Karnataka, India
+  </div>
+  <div>
+    <a href="mailto:puneethag21@email.com">puneethag21@email.com</a>
+    <a href="tel:+917483238339">+91 7483238339</a>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-brand">
+      <div class="nav-initials">PG</div>
+      <div>
+        <div class="nav-name">Puneetha G</div>
+        <div class="nav-title">AI Engineer · Founder, ZEO AI</div>
+      </div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#startup">ZEO AI</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="https://github.com/puneethag21-lang" target="_blank" class="btn-nav btn-outline">GitHub ↗</a>
+    </div>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mob-menu" id="mobMenu">
+  <button class="mob-close" id="mobClose">✕</button>
+  <a href="#about" onclick="cm()">About</a>
+  <a href="#skills" onclick="cm()">Skills</a>
+  <a href="#projects" onclick="cm()">Projects</a>
+  <a href="#startup" onclick="cm()">ZEO AI</a>
+  <a href="#education" onclick="cm()">Education</a>
+  <a href="#contact" onclick="cm()">Contact</a>
+</div>
+
+<!-- HERO -->
+<div class="hero-outer">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow">AI Engineer &nbsp;·&nbsp; Founder &nbsp;·&nbsp; AIML Student</div>
+      <h1 class="hero-name">Puneetha <em>G</em></h1>
+      <div class="hero-role">Artificial Intelligence & Machine Learning · ZEO AI</div>
+      <p class="hero-desc">Building real-world AI applications — from healthcare assistants and computer vision systems to intelligent automation tools and AGI research. Founder of ZEO AI, an emerging startup at the frontier of intelligent technology.</p>
+      <div class="hero-btns">
+        <a href="https://github.com/puneethag21-lang" target="_blank" class="btn-hero-primary">View Projects →</a>
+        <a href="mailto:puneethag21@email.com" class="btn-hero-ghost">Get In Touch</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="hero-card-stat"><div class="num">11+</div><div class="lbl">AI Projects Built</div></div>
+      <div class="hero-card-divider"></div>
+      <div class="hero-card-stat"><div class="num">365</div><div class="lbl">Days of AIML</div></div>
+      <div class="hero-card-divider"></div>
+      <div class="hero-card-stat"><div class="num">ZEO</div><div class="lbl">AI Startup Founded</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<div id="about">
+  <div class="section">
+    <div class="sec-head rv">
+      <div>
+        <div class="sec-label">About</div>
+        <div class="sec-title">AI Engineer &amp; <em>Entrepreneur</em></div>
+      </div>
+    </div>
+    <div class="about-grid">
+      <div class="about-body rv">
+        <p>Puneetha G is an <strong>Artificial Intelligence & Machine Learning</strong> student at Srinivas University and the founder of <strong>ZEO AI</strong> — an emerging startup building the next generation of intelligent AI products.</p>
+        <p>He focuses on delivering real-world AI solutions: healthcare assistants, computer vision systems, and intelligent automation pipelines. He combines academic excellence with a hands-on builder mindset, actively participating in hackathons and maintaining a relentless pace of shipping.</p>
+        <p>His long-term vision is to contribute to advanced AI research and future <strong>AGI development</strong> — pushing the boundaries of what machines can perceive, reason about, and create. He is driven by the conviction that AI will transform every industry.</p>
+      </div>
+      <div class="rv rv-d1">
+        <div class="profile-card">
+          <div class="profile-card-header">
+            <div class="profile-avatar">P</div>
+            <div class="profile-name">Puneetha G</div>
+            <div class="profile-role">AI Engineer · Founder, ZEO AI</div>
+          </div>
+          <div class="profile-body">
+            <div class="profile-row"><span class="pk">University</span><span class="pv">Srinivas University</span></div>
+            <div class="profile-row"><span class="pk">Degree</span><span class="pv">B.Tech AIML</span></div>
+            <div class="profile-row"><span class="pk">Batch</span><span class="pv">2024 – Present</span></div>
+            <div class="profile-row"><span class="pk">Location</span><span class="pv">Karnataka, India</span></div>
+            <div class="profile-row"><span class="pk">Status</span><span class="pv green">● Available</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="stats-row rv">
+      <div class="stat-box"><div class="n">11+</div><div class="l">Projects Shipped</div></div>
+      <div class="stat-box"><div class="n">365</div><div class="l">Days of AIML</div></div>
+      <div class="stat-box"><div class="n">4+</div><div class="l">Hackathons</div></div>
+      <div class="stat-box"><div class="n">1</div><div class="l">Startup Founded</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- SKILLS -->
+<div id="skills" style="background:var(--bg);border-top:1px solid var(--border)">
+  <div class="section">
+    <div class="sec-head rv">
+      <div>
+        <div class="sec-label">Skills</div>
+        <div class="sec-title">Technical <em>Expertise</em></div>
+      </div>
+    </div>
+    <div class="skills-wrap rv">
+      <div class="skill-panel">
+        <div class="skill-panel-title">Programming</div>
+        <div class="skill-row"><span class="sn">Python</span><span class="skill-badge badge-adv">Advanced</span></div>
+        <div class="skill-row"><span class="sn">JavaScript</span><span class="skill-badge badge-int">Intermediate</span></div>
+        <div class="skill-row"><span class="sn">HTML & CSS</span><span class="skill-badge badge-adv">Advanced</span></div>
+      </div>
+      <div class="skill-panel">
+        <div class="skill-panel-title">AI / Machine Learning</div>
+        <div class="skill-row"><span class="sn">Computer Vision</span><span class="skill-badge badge-adv">Advanced</span></div>
+        <div class="skill-row"><span class="sn">YOLO Object Detection</span><span class="skill-badge badge-adv">Advanced</span></div>
+        <div class="skill-row"><span class="sn">TensorFlow / Keras</span><span class="skill-badge badge-int">Intermediate</span></div>
+        <div class="skill-row"><span class="sn">Deep Learning</span><span class="skill-badge badge-int">Intermediate</span></div>
+      </div>
+      <div class="skill-panel">
+        <div class="skill-panel-title">Tools & Platforms</div>
+        <div class="skill-row"><span class="sn">OpenCV</span><span class="skill-badge badge-adv">Advanced</span></div>
+        <div class="skill-row"><span class="sn">Ultralytics YOLO</span><span class="skill-badge badge-adv">Advanced</span></div>
+        <div class="skill-row"><span class="sn">GitHub</span><span class="skill-badge badge-int">Intermediate</span></div>
+        <div class="skill-row"><span class="sn">VS Code</span><span class="skill-badge badge-adv">Advanced</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROJECTS -->
+<div id="projects" style="border-top:1px solid var(--border)">
+  <div class="section">
+    <div class="sec-head rv">
+      <div>
+        <div class="sec-label">Projects</div>
+        <div class="sec-title">Selected <em>Work</em></div>
+      </div>
+      <a href="https://github.com/puneethag21-lang" target="_blank" class="sec-link">View All on GitHub ↗</a>
+    </div>
+    <div class="projects-list rv" id="projList"></div>
+  </div>
+</div>
+
+<!-- ZEO AI -->
+<div id="startup" class="zeo-outer">
+  <div class="zeo-inner">
+    <div class="zeo-top rv">
+      <div class="zeo-brand">
+        <div class="zeo-logo">Z</div>
+        <div class="zeo-brand-text">
+          <div class="zeo-brand-name">ZEO AI</div>
+          <div class="zeo-brand-tag">Next-Generation AI Startup · Founded 2024</div>
+        </div>
+      </div>
+      <div class="zeo-desc">An emerging AI startup building intelligent products at the intersection of healthcare, computer vision, and automation — with a long-term focus on AGI research.</div>
+    </div>
+    <div class="zeo-cards rv">
+      <div class="zeo-card"><span class="zeo-card-icon">🏥</span><div class="zeo-card-title">AI Healthcare</div><div class="zeo-card-desc">Intelligent health assistants providing symptom insights and medical guidance through AI.</div></div>
+      <div class="zeo-card"><span class="zeo-card-icon">👁</span><div class="zeo-card-title">Computer Vision</div><div class="zeo-card-desc">Advanced visual systems using YOLO, OpenCV, and deep learning for real-world deployment.</div></div>
+      <div class="zeo-card"><span class="zeo-card-icon">⚙️</span><div class="zeo-card-title">AI Automation</div><div class="zeo-card-desc">Intelligent workflow automation tools powered by machine learning and adaptive agents.</div></div>
+      <div class="zeo-card"><span class="zeo-card-icon">🔬</span><div class="zeo-card-title">AGI Research</div><div class="zeo-card-desc">Long-term research and development toward artificial general intelligence systems.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ACHIEVEMENTS -->
+<div id="achievements" style="border-top:1px solid var(--border)">
+  <div class="section">
+    <div class="sec-head rv">
+      <div>
+        <div class="sec-label">Achievements</div>
+        <div class="sec-title">Milestones &amp; <em>Recognition</em></div>
+      </div>
+    </div>
+    <div class="ach-grid rv">
+      <div class="ach-item">
+        <div class="ach-icon">🏆</div>
+        <div><div class="ach-title">AI Hackathon Participant</div><div class="ach-desc">Competed in multiple AI hackathons, building innovative solutions under real-world constraints and time pressure.</div></div>
+      </div>
+      <div class="ach-item">
+        <div class="ach-icon">💻</div>
+        <div><div class="ach-title">11+ AI Projects Shipped</div><div class="ach-desc">Delivered real-world AI applications spanning healthcare, traffic detection, gesture recognition, and game AI.</div></div>
+      </div>
+      <div class="ach-item">
+        <div class="ach-icon">🚀</div>
+        <div><div class="ach-title">Founded ZEO AI</div><div class="ach-desc">Established ZEO AI in 2024 to build the next generation of intelligent AI products and services.</div></div>
+      </div>
+      <div class="ach-item">
+        <div class="ach-icon">📅</div>
+        <div><div class="ach-title">365 Days of AIML</div><div class="ach-desc">Committed to a daily AI/ML learning and building challenge — documenting and sharing the entire journey publicly.</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- EDUCATION -->
+<div id="education" style="background:var(--bg);border-top:1px solid var(--border)">
+  <div class="section">
+    <div class="sec-head rv">
+      <div>
+        <div class="sec-label">Education</div>
+        <div class="sec-title">Academic <em>Background</em></div>
+      </div>
+    </div>
+    <div class="edu-wrap rv">
+      <div class="edu-accent-bar"></div>
+      <div class="edu-content">
+        <div class="edu-degree">Bachelor of Technology — Artificial Intelligence & Machine Learning</div>
+        <div class="edu-school">Srinivas University</div>
+        <div class="edu-meta">2024 – Present · Karnataka, India</div>
+        <div class="edu-badge">🎓 Currently Enrolled</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div id="contact" style="border-top:1px solid var(--border)">
+  <div class="section">
+    <div class="sec-head rv">
+      <div>
+        <div class="sec-label">Contact</div>
+        <div class="sec-title">Get In <em>Touch</em></div>
+      </div>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-block rv">
+        <div class="contact-block-header">
+          <h3>Contact Information</h3>
+          <p>Open to collaborations, internships, and AI projects</p>
+        </div>
+        <div class="contact-block-body">
+          <div class="contact-field"><span class="cf-key">Location</span><span class="cf-val">Karnataka, India</span></div>
+          <div class="contact-field"><span class="cf-key">Email</span><span class="cf-val"><a href="mailto:puneethag21@email.com">puneethag21@email.com</a></span></div>
+          <div class="contact-field"><span class="cf-key">Phone</span><span class="cf-val"><a href="tel:+917483238339">+91 7483238339</a></span></div>
+          <div class="contact-field"><span class="cf-key">Startup</span><span class="cf-val">ZEO AI · Founder</span></div>
+          <div class="contact-field"><span class="cf-key">Status</span><span class="cf-val" style="color:#16a34a;font-weight:700">● Available</span></div>
+        </div>
+      </div>
+      <div class="rv rv-d1">
+        <div class="social-list">
+          <a href="https://github.com/puneethag21-lang" target="_blank" class="soc-btn">
+            <div class="soc-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg></div>
+            <div class="soc-info"><div class="soc-name">GitHub</div><div class="soc-handle">puneethag21-lang</div></div>
+            <span class="soc-arrow">→</span>
+          </a>
+          <a href="https://www.linkedin.com/in/puneetha-g-523394376" target="_blank" class="soc-btn">
+            <div class="soc-icon"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></div>
+            <div class="soc-info"><div class="soc-name">LinkedIn</div><div class="soc-handle">puneetha-g-523394376</div></div>
+            <span class="soc-arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-initials">PG</div>
+      <div>
+        <div class="footer-name">Puneetha G</div>
+      </div>
+    </div>
+    <div class="footer-copy">
+      Building the Future with Artificial Intelligence<br/>
+      © 2026 Puneetha G · ZEO AI · Karnataka, India
+    </div>
+  </div>
+</footer>
+
+<script>
+// Projects data
+const projects = [
+  {num:"01",name:"AI Healthcare Assistant",desc:"AI-powered assistant providing health guidance and symptom insights. Core product of ZEO AI.",tags:["Python","NLP","ZEO AI","Healthcare"]},
+  {num:"02",name:"Mental Health Detector",desc:"AI web application exploring mental health detection through intelligent pattern analysis.",tags:["Python","ML","Web","NLP"]},
+  {num:"03",name:"Traffic Custom Detector",desc:"Computer vision system combining real-time traffic detection with custom-trained YOLO models.",tags:["Python","OpenCV","YOLOv8","Ultralytics"]},
+  {num:"04",name:"YOLOv8 Real-Time Detection",desc:"High-speed real-time object detection pipeline built on YOLOv8 architecture.",tags:["YOLOv8","Python","Computer Vision"]},
+  {num:"05",name:"AI Hand Gesture Controller",desc:"Gesture recognition system using hand landmark detection for hands-free device control.",tags:["Python","MediaPipe","OpenCV"]},
+  {num:"06",name:"First TensorFlow Model",desc:"Neural network built from scratch using TensorFlow and Keras — a foundational ML milestone.",tags:["TensorFlow","Keras","Python"]},
+  {num:"07",name:"Stock Tracker",desc:"Python stock price tracking app with real-time market data retrieval via financial APIs.",tags:["Python","API","Finance"]},
+  {num:"08",name:"Basic AI Chatbot",desc:"Conversational chatbot built in Python using natural language processing fundamentals.",tags:["Python","NLP","Chatbot"]},
+  {num:"09",name:"Tic Tac Toe AI",desc:"Web-based AI game featuring a minimax algorithm for an unbeatable AI opponent.",tags:["HTML","CSS","JavaScript","AI"]},
+  {num:"10",name:"Hangman Game",desc:"Classic Hangman word-guessing game implemented as a Python command-line application.",tags:["Python","CLI","Game"]},
+  {num:"11",name:"365 Days of AIML",desc:"Public daily challenge documenting an entire year of AI/ML learning and project building.",tags:["AI","ML","Learning","Challenge"]},
+];
+
+const list = document.getElementById('projList');
+projects.forEach(p => {
+  list.innerHTML += `
+  <div class="proj-row">
+    <div class="proj-idx">${p.num}</div>
+    <div class="proj-info">
+      <div class="proj-title">${p.name}</div>
+      <div class="proj-desc">${p.desc}</div>
+    </div>
+    <div class="proj-tags-wrap">${p.tags.map(t=>`<span class="ptag">${t}</span>`).join('')}</div>
+    <div class="proj-action"><a href="https://github.com/puneethag21-lang" target="_blank" class="proj-link-btn">GitHub ↗</a></div>
+  </div>`;
+});
+
+// Mobile nav
+document.getElementById('hamburger').addEventListener('click',()=>document.getElementById('mobMenu').classList.add('open'));
+document.getElementById('mobClose').addEventListener('click',cm);
+function cm(){document.getElementById('mobMenu').classList.remove('open')}
+
+// Scroll reveal
+const obs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')});
+},{threshold:0.08});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+
+// Active nav highlight
+const sections = document.querySelectorAll('[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll',()=>{
+  let cur='';
+  sections.forEach(s=>{if(window.scrollY>=s.offsetTop-100)cur=s.id});
+  navLinks.forEach(a=>{a.classList.toggle('active',a.getAttribute('href')==='#'+cur)});
+});
+</script>
+</body>
+</html>
